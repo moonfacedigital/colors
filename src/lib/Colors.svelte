@@ -70,6 +70,8 @@
                 return convertOklchToRgba(oklchValue)
             case "token":
                 return `${family}-${step}` // Return the token format
+            case "oklch":
+                return oklchValue // Return the raw OKLCH value
             default:
                 return oklchValue // Fallback to raw OKLCH value
         }
@@ -80,11 +82,11 @@
 <div class="format-selector">
     <label for="color-format">Color Format:</label>
     <select id="color-format" bind:value={selectedFormat}>
+        <option value="token">Token</option>
         <option value="hex">Hex</option>
         <option value="hsl">HSL</option>
         <option value="rgba">RGBA</option>
-        <option value="token">Token</option>
-        <!-- New option for token -->
+        <option value="oklch">OKLCH</option>
     </select>
 </div>
 
@@ -93,7 +95,7 @@
     {#each colorFamilies as family}
         <div class="flex gap-4">
             {#each steps as step}
-                <button
+                <div
                     class="color-box {step >= 500
                         ? 'text-white'
                         : 'text-black'}"
@@ -109,7 +111,7 @@
                     }}
                 >
                     {family}-{step}
-                </button>
+                </div>
             {/each}
         </div>
     {/each}
