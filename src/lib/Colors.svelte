@@ -99,7 +99,7 @@
     {#each colorFamilies as family}
         <div class="flex gap-4">
             {#each steps as step}
-                <div
+                <button
                     class="color-box {step >= 500
                         ? 'text-white'
                         : 'text-black'}"
@@ -115,7 +115,7 @@
                     }}
                 >
                     {family}-{step}
-                </div>
+                </button>
             {/each}
         </div>
     {/each}
@@ -130,8 +130,8 @@
     }
 
     .color-box {
-        width: 100px;
-        height: 100px;
+        width: 75px;
+        height: 75px;
         display: flex;
         align-items: center;
         justify-content: center;
