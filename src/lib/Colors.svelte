@@ -9,11 +9,13 @@
     // Define the color families and their steps
     const colorFamilies = [
         "red",
+        "flame",
         "orange",
         "amber",
         "yellow",
         "lime",
         "green",
+        "mint",
         "emerald",
         "teal",
         "cyan",
@@ -23,7 +25,9 @@
         "violet",
         "purple",
         "fuchsia",
+        "blush",
         "pink",
+        "blossom",
         "rose",
         "slate",
         "gray",
